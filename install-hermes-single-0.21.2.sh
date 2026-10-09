@@ -58,8 +58,14 @@ echo "✓ Docker $(docker --version | awk '{print $3}')／安装包 $(basename "
 say "1/6 校验安装包（损坏的包一定装不上，先拦下）"
 gzip -t "$PKG" && echo "  ✓ 压缩流完整"
 echo -n "  实际 SHA256："; ACTUAL="$(sha256sum "$PKG" | awk '{print $1}')"; echo "$ACTUAL"
-if [ -n "$EXPECT_SHA" ] && [ "$EXPECT_SHA" != "456e9264c3267ec22f1c8cb3f91dafc052f2cf5d469e274e3d94c00d473a98c5" ]; then
-  [ "$ACTUAL" = "$EXPECT_SHA" ] && echo "  ✓ 与预期一致" || { echo "✗ SHA256 不匹配（预期 $EXPECT_SHA）——包可能损坏或被篡改，已停止。"; exit 1; }
+if [ -n "$EXPECT_SHA" ]; then
+  if [ "$ACTUAL" = "$EXPECT_SHA" ]; then
+    echo "  ✓ 与预期一致"
+  else
+    echo "✗ SHA256 不匹配：预期 $EXPECT_SHA"
+    echo "  实际 $ACTUAL —— 包可能损坏或被篡改，已停止。"
+    exit 1
+  fi
 else
   echo "  （未提供预期值；请自行与 Release 页面公布的 SHA256 比对）"
 fi
