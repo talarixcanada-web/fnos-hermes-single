@@ -1,0 +1,17 @@
+# 大文件不进 Git：镜像包与上游源码包走 Release 资产
+*.tar.gz
+*.tgz
+*.tar
+*.tar.zst
+*.zip
+
+# 镜像层解包残留
+blobs/
+rootfs/
+*.img
+
+# 本地临时
+.DS_Store
+Thumbs.db
+*.swp
+*~

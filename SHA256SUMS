@@ -1,0 +1,5 @@
+# SHA256SUMS — fnOS Hermes Single-Node 0.21.2
+
+456e9264c3267ec22f1c8cb3f91dafc052f2cf5d469e274e3d94c00d473a98c5  fnos-hermes-dist-slim-0.21.2.tar.gz
+821556e6336796450ab852d375117b48a4887e71d255794fd6318d99982a5ab6  licenses/MIT-hermes-NousResearch.txt
+e6055e5c224c0c238c4fa4c5b80b1cd6025b3db81c2a9031efd760b7719185a8  install-hermes-single-0.21.2.sh

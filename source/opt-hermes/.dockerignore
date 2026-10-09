@@ -1,0 +1,11 @@
+# 排除构建产物与无用大文件
+app.tgz
+*.log
+*.bak
+.git
+node_modules
+**/__pycache__
+*.pyc
+.venv
+hermes-src-020
+backups
