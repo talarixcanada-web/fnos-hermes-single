@@ -41,10 +41,13 @@
 
 前提：一台 Linux 主机（Ubuntu / Debian 等），已装 Docker。
 
+**三步拉取（Release 直链，无需登录）：**
+
 ```bash
-# 1. 下载镜像包和安装脚本（放在同一个目录）
-#    从本仓库 Release 页面下载 fnos-hermes-dist-slim-0.21.2.tar.gz
-#    以及本仓库根目录的 install-hermes-single-0.21.2.sh
+# 1. 下载安装脚本 + 镜像包 + 校验文件（约 811 MiB）
+curl -LO https://github.com/talarixcanada-web/fnos-hermes-single/releases/download/v0.21.2-dist-slim/install-hermes-single-0.21.2.sh
+curl -LO https://github.com/talarixcanada-web/fnos-hermes-single/releases/download/v0.21.2-dist-slim/fnos-hermes-dist-slim-0.21.2.tar.gz
+curl -LO https://github.com/talarixcanada-web/fnos-hermes-single/releases/download/v0.21.2-dist-slim/SHA256SUMS
 
 # 2. 运行安装脚本（默认只绑 127.0.0.1，最安全）
 sudo bash install-hermes-single-0.21.2.sh

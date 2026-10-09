@@ -46,10 +46,13 @@ platform credentials you want) and start chatting. **The image contains no secre
 
 Prerequisites: a Linux host (Ubuntu / Debian, …) with Docker.
 
+**Three-step pull (direct Release links, no login needed):**
+
 ```bash
-# 1. Grab both files from this repository's Releases/root:
-#      fnos-hermes-dist-slim-0.21.2.tar.gz
-#      install-hermes-single-0.21.2.sh
+# 1. Download installer + image + checksums (≈811 MiB)
+curl -LO https://github.com/talarixcanada-web/fnos-hermes-single/releases/download/v0.21.2-dist-slim/install-hermes-single-0.21.2.sh
+curl -LO https://github.com/talarixcanada-web/fnos-hermes-single/releases/download/v0.21.2-dist-slim/fnos-hermes-dist-slim-0.21.2.tar.gz
+curl -LO https://github.com/talarixcanada-web/fnos-hermes-single/releases/download/v0.21.2-dist-slim/SHA256SUMS
 
 # 2. Run the installer (binds 127.0.0.1 only — safest default)
 sudo bash install-hermes-single-0.21.2.sh
